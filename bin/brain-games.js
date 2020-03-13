@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// import greeting from '../../nodejs-package/src/index';
+import helloName from '../src/index.js';
 
-console.log('Welcome to the Braing games');
-// greeting();
+helloName();
