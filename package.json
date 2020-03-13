@@ -1,8 +1,8 @@
 {
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "study hexlet project",
+  "main": "src/index.js",
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
@@ -13,11 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/agaevramesh/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "ramesh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/agaevramesh/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/agaevramesh/frontend-project-lvl1#readme",
-  "type": "module"
+  "type": "module",
+  "keywords": [
+    "hexlet"
+  ]
 }
