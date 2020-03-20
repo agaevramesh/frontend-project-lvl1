@@ -32,15 +32,16 @@ jobs:
       - name: npm install, build
         # Install and build project
         run: |
-          make install
-          make build
+          npm install
+          rm -rf dist
+          npm run build
         # Add environment variables
         env:
           CI: true
       - name: Run linter
         # Run Linter
         run: |
-          make lint
+          npx eslint .
       - name: Test & publish code coverage
         # Publish code coverage on Code Climate
         # https://github.com/paambaati/codeclimate-action
