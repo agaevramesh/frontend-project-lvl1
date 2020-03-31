@@ -10,7 +10,7 @@ const helloName = () => {
 const getRandomInt = (min, max) => {
   const minValue = Math.ceil(min);
   const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue)) + minValue; //Максимум не включается, минимум включается 
+  return Math.floor(Math.random() * (maxValue - minValue)) + minValue; // Максимум не включается
 };
 
 const repeatFunc = (userName, userFunc) => {
@@ -28,7 +28,8 @@ const evenBrain = () => {
   const randomNum = getRandomInt(0, 100);
   const randomAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
   if ((randomNum % 2 === 0 && randomAnswer === 'yes') || (randomNum % 2 === 1 && randomAnswer === 'no')) {
-    console.log('Correct!'); }
+    console.log('Correct!');
+  }
   else {
     console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomNum % 2 === 0 ? '"yes"' : '"no"');
     return 0;
@@ -99,15 +100,15 @@ const primeBrain = () => {
   const randomAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
   while (i > 1) {
     if (randomAnswer == 'no' || randomNum % i == 0) {
-     console.log('Correct!');
-     return 1;
+      console.log('Correct!');
+      return 1;
     }
     i -= 1;
   }
   if (randomAnswer == 'yes' && i == 1) {
     console.log('Correct!'); 
     return 1;
-   }
+    }
   console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "`, randomNum === 1 ? '"no"' : '"yes"');
   return 0;
 };
