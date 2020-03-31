@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { helloName, calcBrain } from '../src/index.js';
+import { helloName, gcdBrain, repeatFunc } from '../src/index.js';
 
-fCalcBrain(helloName());
+repeatFunc(helloName(), gcdBrain);

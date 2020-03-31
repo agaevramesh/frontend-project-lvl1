@@ -35,7 +35,7 @@ const evenBrain = () => {
   }
 };
 
-const calcBrain = (userName) => {
+const calcBrain = () => {
   console.log('What is the result of the expression?');
   const randomNum1 = getRandomInt(0, 100);
   const randomNum2 = getRandomInt(0, 100);
@@ -51,4 +51,22 @@ const calcBrain = (userName) => {
   }
 };
 
-export { helloName, evenBrain, calcBrain, repeatFunc};
+const gcdBrain = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+  const randomNum1 = getRandomInt(0, 100);
+  const randomNum2 = getRandomInt(0, 100);
+  const randomAnswer = readlineSync.question(`Question: ${randomNum1} ${randomNum2}\nYour answer: `);
+  let tempAnswer = (randomNum1 >= randomNum2 ? randomNum2 : randomNum1);
+  while (randomNum1 % tempAnswer != 0 || randomNum2 % tempAnswer != 0) {
+    tempAnswer = tempAnswer - 1;
+  } 
+  if (tempAnswer == randomAnswer) {
+    console.log('Correct!'); 
+  }
+  else {
+    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${tempAnswer}"`);
+    return 0;
+  }
+};
+
+export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain};
