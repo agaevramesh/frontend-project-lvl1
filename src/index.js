@@ -92,4 +92,24 @@ const progressionBrain = () => {
   }
 };
 
-export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain, progressionBrain };
+const primeBrain = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const randomNum = getRandomInt(2, 103);
+  let i = Math.floor(randomNum / 2);
+  const randomAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
+  while (i > 1) {
+    if (randomAnswer == 'no' || randomNum % i == 0) {
+     console.log('Correct!');
+     return 1;
+    }
+    i -= 1;
+  }
+  if (randomAnswer == 'yes' && i == 1) {
+    console.log('Correct!'); 
+    return 1;
+   }
+  console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "`, randomNum === 1 ? '"no"' : '"yes"');
+  return 0;
+};
+
+export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain, progressionBrain, primeBrain };
