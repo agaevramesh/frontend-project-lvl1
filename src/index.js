@@ -69,4 +69,27 @@ const gcdBrain = () => {
   }
 };
 
-export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain};
+const progressionBrain = () => {
+  console.log('What number is missing in the progression?');
+  const randomStart = getRandomInt(0, 10);
+  const randomStep = getRandomInt(1, 11);
+  const randomPos = getRandomInt(0, 10);
+  let strProg = '';
+  for (let i = 0; i < 10; i++) {
+    if (i === randomPos) {
+      strProg += '.. ';
+      continue;
+    }
+    strProg += `${randomStart + randomStep * i} `;
+  }
+  const randomAnswer = readlineSync.question(`Question: ${strProg}\nYour answer: `);
+  if (randomAnswer == (randomStart + randomStep * randomPos)) {
+    console.log('Correct!'); 
+  }
+  else {
+    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${randomStart + randomStep * randomPos}"`);
+    return 0;
+  }
+};
+
+export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain, progressionBrain };
