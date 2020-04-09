@@ -20,7 +20,7 @@ const repeatFunc = (userName, userFunc) => {
       return 0;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 const evenBrain = () => {
@@ -28,7 +28,7 @@ const evenBrain = () => {
   const randomNum = getRandomInt(0, 100);
   const randomAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
   if ((randomNum % 2 === 0 && randomAnswer === 'yes') || (randomNum % 2 === 1 && randomAnswer === 'no')) {
-    console.log('Correct!');
+    return console.log('Correct!');
   }
   else {
     console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomNum % 2 === 0 ? '"yes"' : '"no"');
