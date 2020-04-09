@@ -4,3 +4,6 @@
 
 
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
+
+
+[![asciicast](https://asciinema.org/a/iRt6XlknkW02GYs5m9ZAf0UVV.png)](https://asciinema.org/a/iRt6XlknkW02GYs5m9ZAf0UVV)
