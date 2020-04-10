@@ -30,25 +30,37 @@ const evenBrain = () => {
   if ((randomNum % 2 === 0 && randomAnswer === 'yes') || (randomNum % 2 === 1 && randomAnswer === 'no')) {
     return console.log('Correct!');
   }
-  else {
-    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomNum % 2 === 0 ? '"yes"' : '"no"');
-    return 0;
-  }
+  console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomNum % 2 === 0 ? '"yes"' : '"no"');
+  return 0;
 };
 
 const calcBrain = () => {
   console.log('What is the result of the expression?');
   const randomNum1 = getRandomInt(0, 100);
   const randomNum2 = getRandomInt(0, 100);
-  const randomNum3 = (getRandomInt(0, 3) === 0 ? '+' : 1 ? '-' : 2 ? '*' : null);
-  const randomAnswer = readlineSync.question(`Question: ${randomNum1} ${randomNum3} ${randomNum2}\nYour answer: `);
-  const tempAnswer = (randomNum3 === '+' ? randomNum1 + randomNum2 : '-' ? randomNum1 - randomNum2 : '*' ? randomNum1 * randomNum2 : null);
-  if (String(tempAnswer) === randomAnswer)
-    return console.log('Correct!');
-  else {
-    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${tempAnswer}"`);
-    return 0;
+  const randomNum3 = getRandomInt(0, 3);
+  let randOperator = '';
+  let tempAnswer = 0;
+  switch (randomNum3) {
+    case 0:
+      tempAnswer = randomNum1 + randomNum2;
+      randOperator = '+';
+      break;
+    case 1:
+      tempAnswer = randomNum1 - randomNum2;
+      randOperator = '-';
+      break;
+    case 2:
+      tempAnswer = randomNum1 * randomNum2;
+      randOperator = '*';
+      break;
+    default:
+      console.log('default value, smth wrong');
   }
+  const randomAnswer = readlineSync.question(`Question: ${randomNum1} ${randOperator} ${randomNum2}\nYour answer: `);
+  if (String(tempAnswer) === randomAnswer) return console.log('Correct!');
+  console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${tempAnswer}"`);
+  return 0;
 };
 
 const gcdBrain = () => {
@@ -58,14 +70,11 @@ const gcdBrain = () => {
   const randomAnswer = Number(readlineSync.question(`Question: ${randomNum1} ${randomNum2}\nYour answer: `));
   let tempAnswer = (randomNum1 >= randomNum2 ? randomNum2 : randomNum1);
   while (randomNum1 % tempAnswer !== 0 || randomNum2 % tempAnswer !== 0) {
-    tempAnswer = tempAnswer - 1;
-  } 
-  if (tempAnswer == randomAnswer)
-    return console.log('Correct!');
-  else {
-    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${tempAnswer}"`);
-    return 0;
+    tempAnswer -= 1;
   }
+  if (String(tempAnswer) === randomAnswer) return console.log('Correct!');
+  console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${tempAnswer}"`);
+  return 0;
 };
 
 const progressionBrain = () => {
@@ -74,21 +83,14 @@ const progressionBrain = () => {
   const randomStep = getRandomInt(1, 11);
   const randomPos = getRandomInt(0, 10);
   let strProg = '';
-  for (let i = 0; i < 10; i++) {
-    if (i === randomPos) {
-      strProg += '.. ';
-      continue;
-    }
-    strProg += `${randomStart + randomStep * i} `;
+  for (let i = 0; i < 10; i += 1) {
+    if (i === randomPos) strProg += '.. ';
+    else strProg += `${randomStart + randomStep * i} `;
   }
   const randomAnswer = readlineSync.question(`Question: ${strProg}\nYour answer: `);
-  if (randomAnswer === String(randomStart + randomStep * randomPos)) {
-    return console.log('Correct!'); 
-  }
-  else {
-    console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${randomStart + randomStep * randomPos}"`);
-    return 0;
-  }
+  if (randomAnswer === String(randomStart + randomStep * randomPos)) return console.log('Correct!');
+  console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was "${randomStart + randomStep * randomPos}"`);
+  return 0;
 };
 
 const primeBrain = () => {
@@ -98,19 +100,17 @@ const primeBrain = () => {
   const randomAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
   while (i > 1) {
     if (randomNum % i === 0) {
-      if (randomAnswer === 'no')
-        return console.log('Correct!');
-      else {
-        console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomAnswer === 'yes' ? '"no"' : '"yes"');
-        return 0;
-      }
+      if (randomAnswer === 'no') return console.log('Correct!');
+      console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomAnswer === 'yes' ? '"no"' : '"yes"');
+      return 0;
     }
     i -= 1;
   }
-  if (randomAnswer === 'yes' && i === 1)
-    return console.log('Correct!');
+  if (randomAnswer === 'yes' && i === 1) return console.log('Correct!');
   console.log(`"${randomAnswer}" is wrong answer ;(. Correct answer was `, randomAnswer === 'yes' ? '"no"' : '"yes"');
   return 0;
 };
 
-export { helloName, evenBrain, calcBrain, repeatFunc, gcdBrain, progressionBrain, primeBrain };
+export {
+  helloName, evenBrain, calcBrain, repeatFunc, gcdBrain, progressionBrain, primeBrain,
+};
