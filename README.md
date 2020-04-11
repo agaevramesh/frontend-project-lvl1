@@ -6,4 +6,4 @@
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
 
 
-[![asciicast](https://asciinema.org/a/iRt6XlknkW02GYs5m9ZAf0UVV.png)](https://asciinema.org/a/iRt6XlknkW02GYs5m9ZAf0UVV)
+<script id="asciicast-8B5HY33jAAVVFW775Na9Nx7XK" src="https://asciinema.org/a/8B5HY33jAAVVFW775Na9Nx7XK.js" async></script>

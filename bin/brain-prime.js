@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { helloName, primeBrain, repeatFunc } from '../src/index.js';
+import { helloName, repeatFunc } from '../src/index.js';
+import primeBrain from '../games/brain-prime.js';
 
 repeatFunc(helloName(), primeBrain);

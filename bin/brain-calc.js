@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { helloName, calcBrain, repeatFunc } from '../src/index.js';
+import { helloName, repeatFunc } from '../src/index.js';
+import calcBrain from '../games/brain-calc.js';
 
 repeatFunc(helloName(), calcBrain);

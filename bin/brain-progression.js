@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { helloName, progressionBrain, repeatFunc } from '../src/index.js';
+import { helloName, repeatFunc } from '../src/index.js';
+import progressionBrain from '../games/brain-progression.js';
 
 repeatFunc(helloName(), progressionBrain);

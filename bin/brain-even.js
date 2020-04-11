@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { helloName, evenBrain, repeatFunc } from '../src/index.js';
+import { helloName, repeatFunc } from '../src/index.js';
+import evenBrain from '../games/brain-even.js';
 
 repeatFunc(helloName(), evenBrain);

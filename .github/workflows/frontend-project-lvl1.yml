@@ -39,5 +39,7 @@ jobs:
           CI: true
       - name: Run linter
         # Run Linter
+        # npx eslint .
         run: |
-          npx eslint .
+          make lint
+

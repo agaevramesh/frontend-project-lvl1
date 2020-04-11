@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { helloName, gcdBrain, repeatFunc } from '../src/index.js';
+import { helloName, repeatFunc } from '../src/index.js';
+import gcdBrain from '../games/brain-gcd.js';
 
 repeatFunc(helloName(), gcdBrain);
