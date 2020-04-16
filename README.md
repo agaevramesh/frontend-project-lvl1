@@ -1,6 +1,6 @@
 # frontend-project-lvl1
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/d413ae8ee34126fdfc05/maintainability)](https://codeclimate.com/github/agaevramesh/frontend-project-lvl1/maintainability)
 
 
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
