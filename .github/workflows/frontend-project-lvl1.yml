@@ -35,8 +35,8 @@ jobs:
           npm install
           
         # Add environment variables
-        env:
-          CI: true
+        # env:
+        #   CI: true
       - name: Run linter
         # Run Linter
         # npx eslint .

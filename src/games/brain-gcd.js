@@ -1,21 +1,20 @@
-import { mainFunc, getRandomInt } from '../index.js';
+import mainFunc from '../index.js';
+import getRandomInt from '../utils.js';
 
 const funcParameters = () => {
+  const questionText = 'Find the greatest common divisor of given numbers.';
   const randomNum1 = getRandomInt(0, 100);
   const randomNum2 = getRandomInt(0, 100);
-  const gameQuestionParametr = `${randomNum1} ${randomNum2}`;
-
-  let gameAnswerParametr = (randomNum1 >= randomNum2 ? randomNum2 : randomNum1);
-  // eslint-disable-next-line max-len
-  while (randomNum1 % gameAnswerParametr !== 0 || randomNum2 % gameAnswerParametr !== 0) gameAnswerParametr -= 1;
-  gameAnswerParametr = String(gameAnswerParametr);
-  const funcOutput = [gameQuestionParametr, gameAnswerParametr];
-  return funcOutput;
+  const questionData = `${randomNum1} ${randomNum2}`;
+  let rightAnswer = (randomNum1 >= randomNum2 ? randomNum2 : randomNum1);
+  while (randomNum1 % rightAnswer !== 0 || randomNum2 % rightAnswer !== 0) rightAnswer -= 1;
+  rightAnswer = String(rightAnswer);
+  const gameParameters = [questionText, questionData, rightAnswer];
+  return gameParameters;
 };
 
 const gcdBrain = () => {
-  const gameQuestion = 'Find the greatest common divisor of given numbers.';
-  mainFunc(gameQuestion, funcParameters);
+  mainFunc(funcParameters);
 };
 
 export default gcdBrain;
