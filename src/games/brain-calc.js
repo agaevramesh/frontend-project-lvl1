@@ -1,33 +1,34 @@
 import mainFunc from '../index.js';
 import getRandomInt from '../utils.js';
 
-const funcParameters = () => {
-  const questionText = 'What is the result of the expression?';
+const getGameParameters = () => {
+  const taskDescription = 'What is the result of the expression?';
   const randomNum1 = getRandomInt(0, 100);
   const randomNum2 = getRandomInt(0, 100);
-  const allOperators = ['+', '-', '*'];
-  const randOperator = allOperators[getRandomInt(0, 1 * allOperators.length)];
-  let rightAnswer = 0;
+  const operators = ['+', '-', '*'];
+  const randOperator = operators[getRandomInt(0, 1 * operators.length)];
+  let rightAnswer;
   switch (randOperator) {
     case '+':
-      rightAnswer = (String)(randomNum1 + randomNum2);
+      rightAnswer = randomNum1 + randomNum2;
       break;
     case '-':
-      rightAnswer = (String)(randomNum1 - randomNum2);
+      rightAnswer = randomNum1 - randomNum2;
       break;
     case '*':
-      rightAnswer = (String)(randomNum1 * randomNum2);
+      rightAnswer = randomNum1 * randomNum2;
       break;
     default:
-      console.log('random operator error');
+      return null;
   }
-  const questionData = randomNum1 + randOperator + randomNum2;
-  const gameParameters = [questionText, questionData, rightAnswer];
+  rightAnswer = (String)(rightAnswer);
+  const questionData = `${randomNum1} ${randOperator} ${randomNum2}`;
+  const gameParameters = [taskDescription, questionData, rightAnswer];
   return gameParameters;
 };
 
 const calcBrain = () => {
-  mainFunc(funcParameters);
+  mainFunc(getGameParameters);
 };
 
 export default calcBrain;
