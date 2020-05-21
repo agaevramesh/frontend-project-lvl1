@@ -8,17 +8,17 @@ const getNod = (num1, num2) => {
 };
 
 const getGameParameters = () => {
-  const taskDescription = 'Find the greatest common divisor of given numbers.';
   const randomNum1 = getRandomInt(1, 100);
   const randomNum2 = getRandomInt(1, 100);
   const questionData = `${randomNum1} ${randomNum2}`;
   const rightAnswer = String(getNod(randomNum1, randomNum2));
-  const gameParameters = [taskDescription, questionData, rightAnswer];
+  const gameParameters = [questionData, rightAnswer];
   return gameParameters;
 };
 
 const gcdBrain = () => {
-  mainFunc(getGameParameters);
+  const taskDescription = 'Find the greatest common divisor of given numbers.';
+  mainFunc(taskDescription, getGameParameters);
 };
 
 export default gcdBrain;

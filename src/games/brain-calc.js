@@ -2,7 +2,6 @@ import mainFunc from '../index.js';
 import getRandomInt from '../utils.js';
 
 const getGameParameters = () => {
-  const taskDescription = 'What is the result of the expression?';
   const randomNum1 = getRandomInt(0, 100);
   const randomNum2 = getRandomInt(0, 100);
   const operators = ['+', '-', '*'];
@@ -23,12 +22,13 @@ const getGameParameters = () => {
   }
   rightAnswer = (String)(rightAnswer);
   const questionData = `${randomNum1} ${randOperator} ${randomNum2}`;
-  const gameParameters = [taskDescription, questionData, rightAnswer];
+  const gameParameters = [questionData, rightAnswer];
   return gameParameters;
 };
 
 const calcBrain = () => {
-  mainFunc(getGameParameters);
+  const taskDescription = 'What is the result of the expression?';
+  mainFunc(taskDescription, getGameParameters);
 };
 
 export default calcBrain;
