@@ -1,17 +1,16 @@
-import mainFunc from '../index.js';
+import startGame from '../index.js';
 import getRandomInt from '../utils.js';
 
-
-const getGameParameters = () => {
-  const questionData = getRandomInt(1, 100);
-  const rightAnswer = questionData % 2 === 0 ? 'yes' : 'no';
-  const gameParameters = [questionData, rightAnswer];
-  return gameParameters;
+const getGameData = () => {
+  const question = getRandomInt(1, 100);
+  const rightAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const gameData = [question, rightAnswer];
+  return gameData;
 };
 
 const evenBrain = () => {
-  const taskDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-  mainFunc(taskDescription, getGameParameters);
+  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+  startGame(task, getGameData);
 };
 
 export default evenBrain;

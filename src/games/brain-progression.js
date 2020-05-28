@@ -1,25 +1,25 @@
-import mainFunc from '../index.js';
+import startGame from '../index.js';
 import getRandomInt from '../utils.js';
 
-const getGameParameters = () => {
+const getGameData = () => {
   const randomStart = getRandomInt(0, 10);
   const randomStep = getRandomInt(1, 11);
   const sizeOfProgression = 10;
-  const randomPos = getRandomInt(0, sizeOfProgression);
-  let questionData = '';
+  const randomPosition = getRandomInt(0, sizeOfProgression - 1);
+  let question = '';
   for (let i = 0; i < sizeOfProgression; i += 1) {
-    if (i === randomPos) questionData += '..';
-    else questionData += `${randomStart + randomStep * i}`;
-    if (i !== sizeOfProgression - 1) questionData += ' ';
+    if (i === randomPosition) question += '..';
+    else question += `${randomStart + randomStep * i} `;
+    question = question.trim();
   }
-  const rightAnswer = String(randomStart + randomStep * randomPos);
-  const gameParameters = [questionData, rightAnswer];
-  return gameParameters;
+  const rightAnswer = randomStart + randomStep * randomPosition;
+  const gameData = [question, String(rightAnswer)];
+  return gameData;
 };
 
 const progressionBrain = () => {
-  const taskDescription = 'What number is missing in the progression?';
-  mainFunc(taskDescription, getGameParameters);
+  const task = 'What number is missing in the progression?';
+  startGame(task, getGameData);
 };
 
 export default progressionBrain;

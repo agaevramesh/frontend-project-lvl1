@@ -2,6 +2,29 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d413ae8ee34126fdfc05/maintainability)](https://codeclimate.com/github/agaevramesh/frontend-project-lvl1/maintainability)
 
+How to install
+1. make install
+2. make publish
+
+There are 5 games:
+1. brain-even
+Answer number even or not
+
+2. brain-gcd
+Find greatest common divisor of two numbers
+
+3. brain-progression
+Find number is missing in the progression
+
+4. brain-calc
+Find result of the expression
+
+5. brain-prime
+Answer number prime or not
+
+To start game:
+brain-even etc
+
 
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
 
