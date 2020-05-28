@@ -4,29 +4,29 @@
 
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
 
-### How to install:
+## How to install:
 ```
 $ make install
 $ make publish
 ```
 
-### There are 5 games:
-1. brain-even
+## There are 5 games:
+#### brain-even
 Answer number even or not
 
-2. brain-gcd
+#### brain-gcd
 Find greatest common divisor of two numbers
 
-3. brain-progression
+#### brain-progression
 Find number is missing in the progression
 
-4. brain-calc
+#### brain-calc
 Find result of the expression
 
-5. brain-prime
+#### brain-prime
 Answer number prime or not
 
-### To start game:
+## To start game:
 ```
 $ brain-even
 ```
