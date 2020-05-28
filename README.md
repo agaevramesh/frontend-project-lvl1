@@ -4,13 +4,13 @@
 
 ![](https://github.com/agaevramesh/frontend-project-lvl1/workflows/lint-project-lvl1/badge.svg)
 
-How to install:
+### How to install:
 ```
-1. make install
-2. make publish
+$ make install
+$ make publish
 ```
 
-There are 5 games:
+### There are 5 games:
 1. brain-even
 Answer number even or not
 
@@ -26,9 +26,9 @@ Find result of the expression
 5. brain-prime
 Answer number prime or not
 
-To start game:
+### To start game:
 ```
-brain-even
+$ brain-even
 ```
 
 [![asciicast](https://asciinema.org/a/8B5HY33jAAVVFW775Na9Nx7XK.svg)](https://asciinema.org/a/8B5HY33jAAVVFW775Na9Nx7XK)
